@@ -78,7 +78,7 @@ def main():
     name=[]
     burstTime=[]
     arrivalTime=[]
-    print ("          First Come First Serve ")
+    print ("          Shortest job first ")
     processCount=int(input("\n Number of processs I want to add : "))
     if processCount>0:
         name,burstTime,arrivalTime=inputprocesses(processCount,name,arrivalTime,burstTime)
