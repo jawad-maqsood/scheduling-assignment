@@ -25,6 +25,7 @@ def execution(at,bt,n,it,quant):
             if bt[0]<=quant and (it[0]==0 or bt[0]==it[0]):
                 for i in range(bt[0]):
                     timer+=1
+
                 trn=timer-preAt[0]
                 turn.append(trn)
                 print("process : ",n[0],"completed at ",timer)
@@ -37,10 +38,11 @@ def execution(at,bt,n,it,quant):
             elif bt[0]>quant and (it[0]==0 or bt[0]==it[0]):
                 for i in range(qtime[0]):
                     timer+=1
-                    bt[0]-=i
+                    bt[0]-=1
                     it[0]=0
+
                 qtime[0]=quant
-                print("process : ",n[0],"executing",bt[0])
+                print("process : ",n[0],"executing",timer)
                 bt.append(bt[0])
                 at.append(at[0])
                 n.append(n[0])
@@ -57,7 +59,7 @@ def execution(at,bt,n,it,quant):
                   if it[0]>qtime[0]:
                     for i in range(qtime[0]):
                         timer+=1
-                    bt[0]-=qtime[0]
+                        bt[0]-=i
                     it[0]-=qtime[0]
                     bt.append(bt[0])
                     at.append(at[0])
@@ -75,8 +77,8 @@ def execution(at,bt,n,it,quant):
                     at[0]+=10
                     for i in range(it[0]):
                          timer+=1
-                         qtime[0]-=i
-                         bt[0]-=i
+                         qtime[0]-=1
+                         bt[0]-=1
                     it[0]=0
 
                     print("process : ",n[0]," I/O at",timer)
